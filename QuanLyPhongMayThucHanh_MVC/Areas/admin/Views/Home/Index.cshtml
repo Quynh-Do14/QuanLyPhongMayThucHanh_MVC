@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+    ViewData["icon"] = "fa fa-list-alt";
+    ViewData["url"] = "/admin/home";
+
+}
+
+<div id="tab-general">
+    <div id="sum_box" class="row mbl">
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 block-space">
+            <div class="panel income db mbm">
+                <div class="panel-body">
+                    <p class="icon">
+                        <i class="icon fa fa-graduation-cap"></i>
+                    </p>
+                    <h4 class="value">
+                        <span id="spTotalFaculties"></span>
+                    </h4>
+                    <p class="description">
+                        Falcuties
+                    </p>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-sm-4 col-md-2 col-xl-2 col-xxl-2">*@
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 block-space">
+            <div class="panel visit db mbm">
+                <div class="panel-body">
+                    <p class="icon">
+                        <i class="icon icon-users"></i>
+                    </p>
+                    <h4 class="value">
+                        <span id="spTotalOfStudents"></span>
+                    </h4>
+                    <p class="description">
+                        Students
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 block-space">
+            <div class="panel profit db mbm">
+                <div class="panel-body">
+                    <p class="icon">
+                        <i class="icon fa fa-building-o" aria-hidden="true"></i>
+                    </p>
+                    <h4 class="value">
+                        <span id="spTotalClasses"></span>
+                    </h4>
+                    <p class="description">
+                        Classes
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 block-space">
+            <div class="panel task db mbm">
+                <div class="panel-body">
+                    <p class="icon">
+                        <i class="icon icon-users"></i>
+                    </p>
+                    <h4 class="value">
+                        <span id="spTotalLecturers"></span>
+                    </h4>
+                    <p class="description">
+                        Lecturers
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 block-space">
+            <div class="panel income db mbm">
+                <div class="panel-body">
+                    <p class="icon">
+                        <i class="icon fa fa-desktop" aria-hidden="true"></i>
+                    </p>
+                    <h4 class="value">
+                        <span id="spActivePC"></span>
+                    </h4>
+                    <p class="description">
+                        Active Computers
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 block-space">
+            <div class="panel profit db mbm">
+                <div class="panel-body">
+                    <p class="icon">
+                        <i class="icon fa fa-book" aria-hidden="true"></i>
+                    </p>
+                    <h4 class="value">
+                        <span id="spTotalSubjects"></span>
+                    </h4>
+                    <p class="description">
+                        Subjects
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mbl">
+        <div class="col-lg-12">
+            <div class="portlet box">
+                <div class="portlet-header">
+                    <div class="caption">
+                        Recent PC LAB Booking
+                    </div>
+                </div>
+                <div style="overflow: auto;" class="portlet-body table-responsive">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped">
+                            <thead>
+                                <tr class="text-info">
+                                    <th>#</th>
+                                    <th>Room</th>
+                                    <th>Subject</th>
+                                    <th>Lecturer</th>
+                                    <th>CP</th>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Remark</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblCalendars"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+
+    <!--LOADING SCRIPTS FOR CHARTS-->
+    <script src="~/assets/script/highcharts.js"></script>
+    <script src="~/assets/script/data.js"></script>
+    <script src="~/Assets/admin/summary.js"></script>
+
+
+}
+

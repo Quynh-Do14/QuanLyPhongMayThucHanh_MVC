@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>@ViewBag.Title - Quản trị Hệ thống quản lý phòng máy</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="apple-touch-icon" sizes="72x72" href="#">
+    <link rel="apple-touch-icon" sizes="114x114" href="#">
+    <!--Loading bootstrap css-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/jquery-ui-1.10.4.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/simple-line-icons.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/animate.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/main.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/zabuto_calendar.min.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/pace.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/jquery.news-ticker.css">
+    <link href="~/Assets/plugins/toast/jquery.toast.min.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/select2/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+
+        <!--BEGIN BACK TO TOP-->
+        <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
+        <!--END BACK TO TOP-->
+        <!--BEGIN TOPBAR-->
+        <div id="header-topbar-option-demo" class="page-header-topbar">
+            <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a id="logo" href="index-2.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text" style="display: none">Xperia</span><span class="logo-text-icon"><img src="/Assets/images/gallery/logo.png" alt="xperia" class="img-responsive" /></span></a>
+                </div>
+                <div class="topbar-main">
+                    <a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+
+                    @{
+                        Html.RenderAction("RenderProfile", "Home");
+                    }
+
+
+                </div>
+            </nav>
+
+        </div>
+        <!--END TOPBAR-->
+        <div id="wrapper">
+            <!--BEGIN SIDEBAR MENU-->
+            @Html.Partial("_SideMenu")
+            <!--END SIDEBAR MENU-->
+            <!--BEGIN PAGE WRAPPER-->
+            <div id="page-wrapper">
+                <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                    <div class="page-header pull-left">
+                        <div class="page-title">
+                            Quản lí phòng máy
+                        </div>
+                        <div class="page-title">
+                            <i class="fa fa-caret-right" aria-hidden="true"></i> 
+                        </div>
+                        <div class="page-title">
+                             @ViewBag.Title
+                        </div>
+                    </div>
+                    <ol class="breadcrumb page-breadcrumb pull-right">
+                        <li>
+                            <i class="@ViewData["icon"]"></i>&nbsp;<a href="@ViewData["url"]">@ViewBag.Title</a>&nbsp;&nbsp;
+                            @{
+
+                                if (ViewData["sub"] != null)
+                                {
+                                    <i class="fa fa-angle-right"></i>
+                                <li class="hidden"><a href="#">@ViewData["sub"]</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                                    <li class="active">@ViewData["sub"]</li>
+                                }
+                            }
+
+                        </ol>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                    <!--END TITLE & BREADCRUMB PAGE-->
+                    <!--BEGIN CONTENT-->
+                    <div class="page-content">
+                        <div class="panel">
+                            <div class="panel-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                    <!--END CONTENT-->
+                    <!--BEGIN FOOTER-->
+                    <div id="footer">
+                        <div class="copyright">
+                            <a href="#">&copy; Designed by LAB Mngr 2024 </a>
+                        </div>
+                    </div>
+                    <!--END FOOTER-->
+                </div>
+                <!--END PAGE WRAPPER-->
+            </div>
+        </div>
+
+        <script src="/Assets/script/jquery-1.10.2.min.js"></script>
+        <script src="/Assets/script/jquery-migrate-1.2.1.min.js"></script>
+        <script src="/Assets/script/jquery-ui.js"></script>
+        <script src="/Assets/script/bootstrap.min.js"></script>
+        
+       
+        <script src="~/Assets/script/jquery.validate.min.js"></script>
+        <script src="~/Assets/plugins/toast/jquery.toast.min.js"></script>
+        <script src="~/Assets/plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="~/Assets/plugins/select2/select2.min.js"></script>
+        <script src="~/Assets/defined/CustomerSweetAlert.js"></script>
+        <script src="~/Assets/script/customize.js"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+
+
+</html>

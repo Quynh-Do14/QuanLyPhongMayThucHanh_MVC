@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "PC Room List";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+    ViewData["page"] = "Danh sách phòng máy";
+    ViewData["icon"] = "fa fa-desktop fa-fw";
+    ViewData["url"] = "/admin/room";
+}
+
+<div class="row">
+    <div class="col-md-offset-6 col-md-4">
+        <div class="input-group">
+            <input type="text" class="form-control" id="txtKeyword">
+            <span class="input-group-btn"><button type="button" class="btn btn-info" id="btnSearch"><i class="fa fa-search" aria-hidden="true"></i> Search</button></span>
+        </div>
+    </div>
+    <div class="col-md-2 text-right">
+        <button class="btn btn-success" data-toggle="modal" data-target="#roomModal">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add new room
+        </button>
+    </div>
+</div>
+<div style="width: 100%;overflow-x: auto; margin-top:10px;">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Room name</th>
+                <th>Location</th>
+                <th>Number of PC</th>
+                <th>Active</th>
+                <th>Monitor</th>
+                <th>Mainboard</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>VGA</th>
+                <th>SSD</th>
+                <th>HDD</th>
+                <th>Keyboard</th>
+                <th>Mouse</th>
+                <th>Headphone</th>
+                <th>Speaker</th>
+                <th>PSU</th>
+                <th>Status</th>
+                <th>Note</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tblRooms" style="white-space: nowrap;">  </tbody>
+    </table>
+</div>
+
+
+<!-- Modal -->
+<div id="roomModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form id="roomForm">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="modalTitle">Create a new room</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name" id="txtName" placeholder="Room name" />
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Location</label>
+                            <input type="text" class="form-control" name="location" id="txtLocation" placeholder="Location of the room" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 form-group">
+                            <label>Number Of PC</label>
+                            <input type="number" min="1" name="numberpc" class="form-control" id="txtNumberOfPC" />
+                        </div>
+                        <div class="col-md-2 form-group">
+                            <label>Active</label>
+                            <input type="number" min="1" name="activepc" class="form-control" id="txtActivePC" />
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>Room Status</label>
+                            <select class="form-control" id="slRoomStatuses"></select>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>Monitor</label>
+                            <input type="text" class="form-control" id="txtMonitor" name="monitor" placeholder="Monitor info" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label>Mainboard</label>
+                            <input type="text" class="form-control" id="txtMainboard" name="mainboard" placeholder="Mainboard info" />
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>CPU</label>
+                            <input type="text" class="form-control" id="txtCPU" placeholder="CPU info" name="cpu" />
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>RAM</label>
+                            <input type="text" class="form-control" id="txtRAM" placeholder="RAM info" name="ram" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label>VGA</label>
+                            <input type="text" class="form-control" id="txtVGA" placeholder="VGA info" name="vga"/>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>SSD</label>
+                            <input type="text" class="form-control" id="txtSSD" placeholder="SSD info" name="ssd"/>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label>HDD</label>
+                            <input type="text" class="form-control" id="txtHDD" placeholder="HDD info" name="hdd"/>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 form-group">
+                            <label>Keyboard</label>
+                            <input type="text" class="form-control" id="txtKeyboard" placeholder="Keyboard info" name="keyboard"/>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Mouse</label>
+                            <input type="text" class="form-control" id="txtMouse" placeholder="Mouse info" name="mouse"/>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Headphone</label>
+                            <input type="text" class="form-control" id="txtHeadphone" placeholder="Headphone info" name="headphone"/>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label>Speaker</label>
+                            <input type="text" class="form-control" id="txtSpeaker" placeholder="Speaker info" name="speaker" />
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label>PSU</label>
+                            <input type="text" class="form-control" id="txtPSU" placeholder="PSU info" name="psu"/>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Note</label>
+                            <input type="text" class="form-control" id="txtNote" placeholder="Remark" name="remark"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnSubmit">Submit changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Assets/admin/room.js"></script>
+}

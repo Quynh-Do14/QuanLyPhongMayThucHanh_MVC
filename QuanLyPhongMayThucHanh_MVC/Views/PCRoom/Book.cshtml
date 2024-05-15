@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Phòng máy";
+    ViewData["sub"] = "Đăng ký";
+    ViewBag.icon = "fa fa-desktop fa-fw";
+    ViewData["url"] = "/pcroom";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Assets/plugins/bootstrap-glyphicon/bootstrap-glyphicons.css" rel="stylesheet" />
+<link href="~/Assets/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Ngày:</label>
+            <div class='input-group date' id='dtpDate'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>    
+    <div class="col-md-4 form-group">
+            <label>From</label>
+            <select class="form-control" id="slFromClassPeriods"></select>            
+    </div>
+    <div class="col-md-4 form-group">   
+        <div class="input-group" style="margin-top:25px;">            
+            <select class="form-control" id="slToClassPeriods"></select>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" id="btnSearch">
+                    <i class="fa fa-search" aria-hidden="true"></i> 
+                    Search
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr class="text-info">
+                <th>#</th>
+                <th>Room name</th>
+                <th>Location</th>
+                <th>Number of PC</th>
+                <th>Active</th>
+                <th>Broken</th>
+                <th>Monitor</th>
+                <th>Mainboard</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>VGA</th>
+                <th>SSD</th>
+                <th>HDD</th>
+                <th>Keyboard</th>
+                <th>Mouse</th>
+                <th>Headphone</th>
+                <th>Speaker</th>
+                <th>PSU</th>
+                <th>Status</th>
+                <th>Note</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tblRooms"></tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div id="modalBook" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="modalTitle">Book PC LAB</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">                    
+                    <div class="col-md-12 form-group">
+                        <label>Subject</label>
+                        <select class="form-control" id="slSubjects"></select>
+                    </div>
+                </div>        
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label>Note:</label>
+                        <textarea class="form-control" id="txaNote" placeholder="Note here...."></textarea>
+                    </div>
+                </div>      
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnSubmit">Submit booking</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script src="~/Assets/plugins/bootstrap-datetimepicker/moment.min.js"></script>
+    <script src="~/Assets/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Assets/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/Assets/defined/pcroom_book.js"></script>
+}

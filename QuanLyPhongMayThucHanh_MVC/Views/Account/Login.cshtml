@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Lecturer login - PC LAB MNGR - Hệ thống quản lý phòng máy thực hành";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/animate.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/main.css">
+    <link type="text/css" rel="stylesheet" href="/Assets/styles/style-responsive.css">
+    <link href="~/Assets/plugins/toast/jquery.toast.min.css" rel="stylesheet" />
+</head>
+<body class="">
+    <div class="page-form">
+        <div class="panel panel-blue">
+            <div class="panel-body pan">
+                <div class="form-horizontal" style="border: 1px solid #808080; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);">
+                    <div class="form-body login-padding">
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <img src="/Assets/images/logo.png" class="img-responsive" style="width:100px; height:auto; padding: 10px 0; margin: auto;" />
+                            </div>
+                        </div>
+                        <form class="form-body pal" id="registration-form">
+                            <div class="form-group">
+                                <label for="inputName" class="control-label">
+                                    Tên đăng nhập
+                                </label>
+                                <div class="">
+                                    <div class="input-icon right">
+                                        <i class="fa fa-user"></i>
+                                        <input id="txtUsername" name="username" type="text" placeholder="Nhập tên đăng nhập" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword" class="control-label">
+                                    Mật khẩu
+                                </label>
+                                <div class="">
+                                    <div class="input-icon right">
+                                        <i class="fa fa-lock"></i>
+                                        <input id="txtPassword" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mbn" style="margin-top:40px;">
+                                <div class="col-lg-12">
+                                    <div class="form-group mbn">
+                                        <div class="text-center">
+                                            <button id="btnLogin" class="btn btn-default sign-btn">
+                                                Đăng nhập
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-right">
+                                    <p style="margin-top:15px;">
+                                        Bạn chưa có tài khoản?
+                                        <a href="/account/signup" style="color:#007bff;cursor:pointer" ; font-weight: bold;">Đăng kí ngay</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Assets/script/jquery-1.10.2.min.js"></script>
+    <script src="~/Assets/plugins/toast/jquery.toast.min.js"></script>
+    <script src="~/Assets/script/jquery.validate.min.js"></script>
+    <script src="~/Assets/defined/account.js"></script>
+</body>
+
+</html>
