@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Practice Schedule Calendar";
+    ViewBag.Title = "Lịch thực hành";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
     ViewData["icon"] = "fa fa-calendar";
     ViewData["url"] = "/admin/practiceschedule";
@@ -10,9 +10,9 @@
 <link href="~/Assets/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
 <div class="row">
-    <div class="col-md-3 col-md-offset-5">
+    <div class="col-md-3">
         <div class="form-group">
-            <label>Filter time</label>
+            <label>Lọc theo thời gian bắt đầu</label>
             <div class='input-group date' id='dtpFromDate'>
                 <input type='text' class="form-control" />
                 <span class="input-group-addon">
@@ -21,22 +21,27 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 form-group">
-        <div class="input-group" style="margin-top:25px;">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Lọc theo thời gian kết thúc</label>
             <div class='input-group date' id='dtpToDate'>
                 <input type='text' class="form-control" />
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
+        </div>
+    </div>
+    <div class="col-md-3 form-group">
+        <div class="input-group" style="margin-top:25px;">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-default" id="btnSearch">
+                <button type="button" class="btn btn-primary" id="btnSearch">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    Search
+                    Tìm kiếm
                 </button>
-                <button type="button" class="btn btn-info" id="btnExportToExcel" style="margin-left:5px; background-color:#00ffff !important;">
+                <button type="button" class="btn btn-success" id="btnExportToExcel" style="margin-left:5px">
                     <i class="fa fa-file-excel-o" aria-hidden="true"></i>
-                    Export
+                    Xuất file
                 </button>
             </span>
         </div>
@@ -49,14 +54,14 @@
         <thead>
             <tr class="text-info">
                 <th>#</th>
-                <th>Room</th>
-                <th>Subject</th>
-                <th>Lecturer</th>
-                <th>CP</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Remark</th>
-                <th>Status</th>
+                <th>Phòng học</th>
+                <th>Môn học</th>
+                <th>Giảng viên</th>
+                <th>TIết</th>
+                <th>Thời gian bắt đầu</th>
+                <th>Thời gian kết thúc</th>
+                <th>Nhận xét</th>
+                <th>Trạng thái</th>
             </tr>
         </thead>
         <tbody id="tblCalendars"></tbody>

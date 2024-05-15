@@ -2,7 +2,7 @@
 const $txtPassword = $('#txtPassword');
 const $btnLogin = $('#btnLogin');
 $(function () {
-    $('#dtpBirthdate').datetimepicker({
+    $('#dtpBirthdate')?.datetimepicker({
         format: 'DD/MM/YYYY',
         defaultDate: new Date()       
     });

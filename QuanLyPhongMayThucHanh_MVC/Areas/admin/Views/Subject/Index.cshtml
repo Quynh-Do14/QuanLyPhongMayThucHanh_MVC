@@ -1,16 +1,16 @@
 ﻿
 @{
-    ViewBag.Title = "Subject Management";
+    ViewBag.Title = "Quản lý môn học";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
     ViewData["icon"] = "fa fa-book";
     ViewData["url"] = "/admin/subject";
 }
 
 <div class="row">
-    <div class="col-md-offset-10 col-md-2 text-right">
+    <div class="col-md-2 text-right">
         <button class="btn btn-success" data-toggle="modal" data-target="#subjectModal">
             <i class="fa fa-plus" aria-hidden="true"></i>
-            Add new subject
+            Thêm môn học mới
         </button>
     </div>
 </div>
@@ -21,8 +21,8 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Acronym</th>                
-                <th>Name</th>
+                <th>Kí hiệu</th>                
+                <th>Tên môn</th>
                 <th></th>
             </tr>
         </thead>
@@ -39,19 +39,19 @@
             <form id="lecturerform">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="modalTitle">Add new subject</h4>
+                    <h4 class="modal-title" id="modalTitle">Thêm môn học mới</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">                       
                         <div class="col-md-12 form-group">
-                            <label>Subject name</label>
-                            <input type="text" class="form-control" id="txtName" name="name" />
+                            <label>Tên môn học</label>
+                            <input type="text" class="form-control" id="txtName" name="Nhập tên môn học" />
                         </div>
                     </div>                   
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" id="btnSubmit">Submit changes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="btnSubmit">Hoàn tất</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
             </form>
         </div>

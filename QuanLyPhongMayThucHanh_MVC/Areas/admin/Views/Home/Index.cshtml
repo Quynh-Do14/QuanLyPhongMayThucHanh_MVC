@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Trang chủ";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
     ViewData["icon"] = "fa fa-list-alt";
     ViewData["url"] = "/admin/home";
@@ -19,7 +19,7 @@
                         <span id="spTotalFaculties"></span>
                     </h4>
                     <p class="description">
-                        Falcuties
+                        Khoa
                     </p>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         <span id="spTotalOfStudents"></span>
                     </h4>
                     <p class="description">
-                        Students
+                        Sinh viên
                     </p>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                         <span id="spTotalClasses"></span>
                     </h4>
                     <p class="description">
-                        Classes
+                        Lớp
                     </p>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                         <span id="spTotalLecturers"></span>
                     </h4>
                     <p class="description">
-                        Lecturers
+                        Giảng viên
                     </p>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                         <span id="spActivePC"></span>
                     </h4>
                     <p class="description">
-                        Active Computers
+                        Máy tính hoạt động
                     </p>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                         <span id="spTotalSubjects"></span>
                     </h4>
                     <p class="description">
-                        Subjects
+                        Môn học
                     </p>
                 </div>
             </div>
@@ -112,7 +112,7 @@
             <div class="portlet box">
                 <div class="portlet-header">
                     <div class="caption">
-                        Recent PC LAB Booking
+                        Đặt phòng PC LAB gần đây
                     </div>
                 </div>
                 <div style="overflow: auto;" class="portlet-body table-responsive">
@@ -121,14 +121,14 @@
                             <thead>
                                 <tr class="text-info">
                                     <th>#</th>
-                                    <th>Room</th>
-                                    <th>Subject</th>
-                                    <th>Lecturer</th>
-                                    <th>CP</th>
-                                    <th>Start</th>
-                                    <th>End</th>
-                                    <th>Remark</th>
-                                    <th>Status</th>
+                                    <th>Phòng</th>
+                                    <th>Môn học</th>
+                                    <th>Giảng viên</th>
+                                    <th>Tiết</th>
+                                    <th>Bắt đầu</th>
+                                    <th>Kết thúc</th>
+                                    <th>Nhận xét</th>
+                                    <th>Trạng thái</th>
                                 </tr>
                             </thead>
                             <tbody id="tblCalendars"></tbody>

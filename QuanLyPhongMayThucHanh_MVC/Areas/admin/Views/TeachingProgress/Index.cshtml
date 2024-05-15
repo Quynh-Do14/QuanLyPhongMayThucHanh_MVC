@@ -1,62 +1,62 @@
 ﻿
 @{
-    ViewBag.Title = "Teaching Progress";
+    ViewBag.Title = "Tiến độ giảng dạy";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row">
-    <div class="col-md-4 form-group">
-        <label>Faculty</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Khoa</label>
         <select class="form-control" id="slFaculties1"></select>
     </div>
-    <div class="col-md-4">
-        <label>Classroom</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Phòng học</label>
         <select class="form-control" id="slClassrooms1"></select>
-    </div> 
-    
-    <div class="col-md-4 form-group">
-        <label>Lecturer</label>
+    </div>
+
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Giảng viên</label>
         <select class="form-control" id="slLecturers1"></select>
-    </div>    
+    </div>
 </div>
 <div class="row" style="margin-top:5px;">
-    <div class="col-md-4 form-group">
-        <label>School year</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Năm học</label>
         <select class="form-control" id="slSchoolYears1"></select>
-    </div>   
-    <div class="col-md-4">
-        <label>Semester</label>
+    </div>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Kì</label>
         <select class="form-control" id="slSemesters1"></select>
-    </div> 
-    <div class="col-md-4 form-group">
-        <label>Subject</label>
+    </div>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Môn học</label>
         <select class="form-control" id="slSubjects1"></select>
     </div>
-    
+
 </div>
-<div class="rows" style="margin-top:5px">
-    <div class="col-md-4">
+<div class="rows" style="margin:5px 0px">
+    <div class="col-md-12 col-lg-4 form-group">
         <select class="form-control" id="slStatus1">
-            <option value="-1">All</option>
-            <option value="0">Actived</option>
-            <option value="1">Unactived</option>
+            <option value="-1">Tất cả</option>
+            <option value="0">Hoạt động</option>
+            <option value="1">Không hoạt động</option>
         </select>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-12 col-lg-4 form-group">
         <div class="input-group">
-            <input type="text" class="form-control" id="txtKeyword" placeholder="Enter your keyword ...">
+            <input type="text" class="form-control" id="txtKeyword" placeholder="Nhập tên ...">
             <span class="input-group-btn">
                 <button type="button" class="btn btn-info" id="btnSearch">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    Search...
+                    Tìm kiếm
                 </button>
             </span>
         </div>
     </div>
-    <div class="col-md-4 text-right">
+    <div class="col-md-12 col-lg-4 form-group">
         <button class="btn btn-success" data-toggle="modal" data-target="#progressModal">
             <i class="fa fa-plus" aria-hidden="true"></i>
-            Add new progress
+            Thêm mới
         </button>
     </div>
 </div>
@@ -66,12 +66,12 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Faculty</th>
-                    <th>Subject</th>
-                    <th>Classroom</th>
-                    <th>Lecturer</th>
-                    <th>School year</th>
-                    <th class="text-right">Enrollment</th>
+                    <th>Khoa</th>
+                    <th>Môn học</th>
+                    <th>Phòng học</th>
+                    <th>GIảng viên</th>
+                    <th>Năm học</th>
+                    <th class="text-right">Điểm danh</th>
                     <th></th>
                 </tr>
             </thead>
@@ -86,7 +86,7 @@
                     <option value="200">200</option>
                     <option value="500">500</option>
                     <option value="1000">1000</option>
-                    <option value="0">All</option>
+                    <option value="0">Tất cả</option>
                 </select>
             </div>
         </div>
@@ -106,45 +106,45 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" id="modalTitle">Add new progress</h4>
+                <h4 class="modal-title" id="modalTitle">Thêm mới</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4 form-group">
-                        <label>Faculty</label>
+                        <label>Khoa</label>
                         <select class="form-control" id="slFaculties"></select>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label>Class</label>
+                        <label>Lớp</label>
                         <select class="form-control" id="slClassrooms"></select>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label>Subject</label>
+                        <label>Môn học</label>
                         <select class="form-control" id="slSubjects"></select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 form-group">
-                        <label>School year</label>
+                        <label>Năm học</label>
                         <select class="form-control" id="slSchoolYears"></select>
                     </div>
                     <div class="col-md-2 form-group">
-                        <label>Semester</label>
+                        <label>Kì học</label>
                         <select class="form-control" id="slSemesters"></select>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label>Lecturer</label>
+                        <label>Giảng viên</label>
                         <select class="form-control" id="slLecturers"></select>
                     </div>
                     <div class="col-md-4 form-group">
-                        <label>Number of students</label>
+                        <label>Số lượng sinh viên</label>
                         <input type="number" id="txtNumberOfStudents" class="form-control" min="1">
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="btnSubmit">Submit changes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="btnSubmit">Hoàn tất</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
             </div>
         </div>
 

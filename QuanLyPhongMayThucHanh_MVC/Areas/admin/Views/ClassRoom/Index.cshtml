@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Quản lý lớp";
+    ViewBag.Title = "Lớp";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -38,10 +38,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Faculty</th>
-                <th>Acronym</th>
-                <th>Name</th>
-                <th>Academic year</th>
+                <th>Khoa</th>
+                <th>Kí hiệu</th>
+                <th>Tên</th>
+                <th>Niên giám</th>
                 <th></th>
             </tr>
         </thead>
@@ -62,23 +62,23 @@
             <div class="modal-body">
                 <div class="row">                   
                     <div class="col-md-6 form-group">
-                        <label>From year</label>
+                        <label>Năm bắt đầu</label>
                         <select class="form-control" id="slFromYears"></select>
                     </div>
                     <div class="col-md-6 form-group">
-                        <label>To year</label>
+                        <label>Năm kết thúc</label>
                         <select class="form-control" id="slToYears"></select>
                     </div>   
                 </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <label>Name</label>
+                        <label>Tên lớp</label>
                         <input type="text" class="form-control" id="txtName" placeholder="Tên lớp" />
                     </div>                                    
                 </div>               
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="btnSubmit">Đồng ý</button>
+                <button type="button" class="btn btn-success" id="btnSubmit">Hoàn tất</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
             </div>
         </div>

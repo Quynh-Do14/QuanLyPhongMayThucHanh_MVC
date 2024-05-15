@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "PC Room List";
+    ViewBag.Title = "Danh sách phòng máy";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
     ViewData["page"] = "Danh sách phòng máy";
     ViewData["icon"] = "fa fa-desktop fa-fw";
@@ -8,16 +8,16 @@
 }
 
 <div class="row">
-    <div class="col-md-offset-6 col-md-4">
+    <div class="col-md-4">
         <div class="input-group">
             <input type="text" class="form-control" id="txtKeyword">
-            <span class="input-group-btn"><button type="button" class="btn btn-info" id="btnSearch"><i class="fa fa-search" aria-hidden="true"></i> Search</button></span>
+            <span class="input-group-btn"><button type="button" class="btn btn-info" id="btnSearch"><i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm</button></span>
         </div>
     </div>
     <div class="col-md-2 text-right">
         <button class="btn btn-success" data-toggle="modal" data-target="#roomModal">
             <i class="fa fa-plus" aria-hidden="true"></i>
-            Add new room
+            Thêm phòng mới
         </button>
     </div>
 </div>
@@ -26,24 +26,24 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Room name</th>
-                <th>Location</th>
-                <th>Number of PC</th>
-                <th>Active</th>
-                <th>Monitor</th>
+                <th>Tên phòng</th>
+                <th>Vị trí</th>
+                <th>Số máy</th>
+                <th>Hoạt động</th>
+                <th>Màn hình</th>
                 <th>Mainboard</th>
                 <th>CPU</th>
                 <th>RAM</th>
                 <th>VGA</th>
                 <th>SSD</th>
                 <th>HDD</th>
-                <th>Keyboard</th>
-                <th>Mouse</th>
-                <th>Headphone</th>
-                <th>Speaker</th>
+                <th>Bàn phím</th>
+                <th>Chuột</th>
+                <th>Tai nghe</th>
+                <th>Loa</th>
                 <th>PSU</th>
-                <th>Status</th>
-                <th>Note</th>
+                <th>Trạng thái</th>
+                <th>Ghi chú</th>
                 <th></th>
             </tr>
         </thead>
@@ -61,17 +61,17 @@
             <form id="roomForm">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="modalTitle">Create a new room</h4>
+                    <h4 class="modal-title" id="modalTitle">Tạo phòng mới</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" id="txtName" placeholder="Room name" />
+                            <label>Tên</label>
+                            <input type="text" class="form-control" name="name" id="txtName" placeholder="Nhập tên phòng" />
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Location</label>
-                            <input type="text" class="form-control" name="location" id="txtLocation" placeholder="Location of the room" />
+                            <label>Vị trí</label>
+                            <input type="text" class="form-control" name="location" id="txtLocation" placeholder="Vị trí phòng" />
                         </div>
                     </div>
                     <div class="row">
@@ -88,36 +88,36 @@
                             <select class="form-control" id="slRoomStatuses"></select>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label>Monitor</label>
-                            <input type="text" class="form-control" id="txtMonitor" name="monitor" placeholder="Monitor info" />
+                            <label>Màn hình</label>
+                            <input type="text" class="form-control" id="txtMonitor" name="monitor" placeholder="Thông tin màn hình" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group">
                             <label>Mainboard</label>
-                            <input type="text" class="form-control" id="txtMainboard" name="mainboard" placeholder="Mainboard info" />
+                            <input type="text" class="form-control" id="txtMainboard" name="mainboard" placeholder="Thông tin Mainboard" />
                         </div>
                         <div class="col-md-4 form-group">
                             <label>CPU</label>
-                            <input type="text" class="form-control" id="txtCPU" placeholder="CPU info" name="cpu" />
+                            <input type="text" class="form-control" id="txtCPU" placeholder="Thông tin CPU" name="cpu" />
                         </div>
                         <div class="col-md-4 form-group">
                             <label>RAM</label>
-                            <input type="text" class="form-control" id="txtRAM" placeholder="RAM info" name="ram" />
+                            <input type="text" class="form-control" id="txtRAM" placeholder="Thông tin RAM" name="ram" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 form-group">
                             <label>VGA</label>
-                            <input type="text" class="form-control" id="txtVGA" placeholder="VGA info" name="vga"/>
+                            <input type="text" class="form-control" id="txtVGA" placeholder="Thông tin VGA" name="vga"/>
                         </div>
                         <div class="col-md-4 form-group">
                             <label>SSD</label>
-                            <input type="text" class="form-control" id="txtSSD" placeholder="SSD info" name="ssd"/>
+                            <input type="text" class="form-control" id="txtSSD" placeholder="Thông tin SSD" name="ssd"/>
                         </div>
                         <div class="col-md-4 form-group">
                             <label>HDD</label>
-                            <input type="text" class="form-control" id="txtHDD" placeholder="HDD info" name="hdd"/>
+                            <input type="text" class="form-control" id="txtHDD" placeholder="Thông tin HDD" name="hdd"/>
                         </div>
                     </div>
                     <div class="row">
@@ -125,20 +125,20 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3 form-group">
-                            <label>Keyboard</label>
-                            <input type="text" class="form-control" id="txtKeyboard" placeholder="Keyboard info" name="keyboard"/>
+                            <label>Bàn phím</label>
+                            <input type="text" class="form-control" id="txtKeyboard" placeholder="Thông tin bàn phím" name="keyboard"/>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Mouse</label>
-                            <input type="text" class="form-control" id="txtMouse" placeholder="Mouse info" name="mouse"/>
+                            <label>Chuột</label>
+                            <input type="text" class="form-control" id="txtMouse" placeholder="Thông tin chuột" name="mouse"/>
                         </div>
                         <div class="col-md-3 form-group">
                             <label>Headphone</label>
-                            <input type="text" class="form-control" id="txtHeadphone" placeholder="Headphone info" name="headphone"/>
+                            <input type="text" class="form-control" id="txtHeadphone" placeholder="Thông tin tai nghe" name="headphone"/>
                         </div>
                         <div class="col-md-3 form-group">
-                            <label>Speaker</label>
-                            <input type="text" class="form-control" id="txtSpeaker" placeholder="Speaker info" name="speaker" />
+                            <label>Loa</label>
+                            <input type="text" class="form-control" id="txtSpeaker" placeholder="Thông tin loa" name="speaker" />
                         </div>
                     </div>
 
@@ -146,17 +146,17 @@
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label>PSU</label>
-                            <input type="text" class="form-control" id="txtPSU" placeholder="PSU info" name="psu"/>
+                            <input type="text" class="form-control" id="txtPSU" placeholder="Thông tin PSU" name="psu"/>
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>Note</label>
-                            <input type="text" class="form-control" id="txtNote" placeholder="Remark" name="remark"/>
+                            <label>Ghi chú</label>
+                            <input type="text" class="form-control" id="txtNote" placeholder="Ghi chú" name="remark"/>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" id="btnSubmit">Submit changes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="btnSubmit">Hoàn tất</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
             </form>
         </div>

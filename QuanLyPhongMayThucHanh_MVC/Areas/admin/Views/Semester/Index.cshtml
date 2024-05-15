@@ -1,14 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Semester Management";
+    ViewBag.Title = "Quản lý học kì";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row">
-    <div class="col-md-offset-10 col-md-2 text-right">
+    <div class="col-md-2 text-right">
         <button class="btn btn-success" data-toggle="modal" data-target="#semesterModal">
             <i class="fa fa-plus" aria-hidden="true"></i>
-            Add new semester
+            Thêm học kì mới
         </button>
     </div>
 </div>
@@ -19,8 +19,8 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th>Order</th>
+                <th>Tên</th>
+                <th>Đặt</th>
                 <th></th>
             </tr>
         </thead>
@@ -37,23 +37,23 @@
             <form id="semesterForm">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="modalTitle">Add new semester</h4>
+                    <h4 class="modal-title" id="modalTitle">Tạo học kì mới</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" id="txtName" name="name" placeholder="Semester name" />
+                            <label>Tên</label>
+                            <input type="text" class="form-control" id="txtName" name="name" placeholder="Tên học kì" />
                         </div>
                         <div class="col-md-2 form-group">
-                            <label>Order</label>
+                            <label>Đặt</label>
                             <input type="number" name="order" min="1" class="form-control" id="txtOrder"/>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" id="btnSubmit">Submit changes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="btnSubmit">Hoàn tất</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
             </form>
         </div>

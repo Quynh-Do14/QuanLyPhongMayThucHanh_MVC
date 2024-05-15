@@ -1,30 +1,30 @@
 ﻿
 @{
-    ViewBag.Title = "Statistic";
+    ViewBag.Title = "Thống kê";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
     ViewData["icon"] = "fa fa-bar-chart-o fa-fw";
     ViewData["url"] = "/admin/statistic";
 }
 
 <div class="row">
-    <div class="col-md-4 form-group">
-        <label>Faculty</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Khoa</label>
         <select class="form-control" id="slFaculties"></select>
     </div>
-    <div class="col-md-4">
-        <label>Classroom</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Phòng học</label>
         <select class="form-control" id="slClassrooms"></select>
     </div>
 
-    <div class="col-md-4 form-group">
-        <label>Lecturer</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Giảng viên</label>
         <select class="form-control" id="slLecturers"></select>
     </div>
 </div>
 <div class="row" style="margin-top:5px;">
     <div class="col-md-2 form-group">
         <div class="form-group">
-            <label>From date</label>
+            <label>Ngày bắt đầu</label>
             <div class="input-group date" id="dtpFromDate">
                 <input type="text" class="form-control">
                 <span class="input-group-addon">
@@ -35,30 +35,30 @@
     </div>
     <div class="col-md-2 form-group">
         <div class="input-group">
-            <label>To date</label>
+            <label>Ngày kết thúc</label>
             <div class="input-group date" id="dtpToDate">
                 <input type="text" class="form-control">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
-            </div>           
+            </div>
         </div>
     </div>
-    <div class="col-md-4 form-group">
-        <label>Subject</label>
+    <div class="col-md-12 col-lg-4 form-group">
+        <label>Môn học</label>
         <select class="form-control" id="slSubjects"></select>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-12 col-lg-4 form-group">
         <div class="input-group" style="margin-top:20px;">
-            <input type="text" class="form-control" id="txtKeyword" placeholder="Enter your keyword ...">
+            <input type="text" class="form-control" id="txtKeyword" placeholder="Nhập từ khóa ...">
             <span class="input-group-btn">
-                <button type="button" class="btn btn-info" id="btnSearch">
+                <button type="button" class="btn btn-blue" id="btnSearch">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    Search...
+                    Tìm kiếm
                 </button>
-                <button type="button" class="btn btn-info" id="btnExportToExcel" style="margin-left:5px; background-color:#00ffff !important;">
+                <button type="button" class="btn btn-success" id="btnExportToExcel" style="margin-left:5px;">
                     <i class="fa fa-file-excel-o" aria-hidden="true"></i>
-                    Export
+                    Xuất file
                 </button>
             </span>
         </div>
@@ -71,14 +71,14 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Faculty</th>
-                <th>Subject</th>
-                <th>Classroom</th>
-                <th>Lecturer</th>
-                <th>Semester</th>
-                <th>Class period</th>
-                <th>From</th>
-                <th>To</th>
+                <th>Khoa</th>
+                <th>Môn học</th>
+                <th>Phòng học</th>
+                <th>Giảng viên</th>
+                <th>Kì</th>
+                <th>Tiết</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
             </tr>
         </thead>
         <tbody id="tblData">  </tbody>
